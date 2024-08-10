@@ -12,6 +12,7 @@
   --pure-black: black;
   --medium-orchid: #cb33d8;
   --royal-blue: #0167ff;
+  --purple-brand: #6165ff;
   --peru: #c07e3c;
 }
 
@@ -4984,6 +4985,10 @@ blockquote {
 
 .text-span-2 {
   color: var(--royal-blue);
+}
+
+.bold-text {
+  color: var(--purple-brand);
 }
 
 @media screen and (min-width: 1440px) {
