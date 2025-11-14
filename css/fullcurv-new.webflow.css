@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Ppeiko;
+  src: url('../fonts/PPEiko-LightItalic.otf') format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --soft-black: #1e1d1d;
   --concrete: #c8c4c1;
@@ -144,14 +152,15 @@ blockquote {
 
 .container {
   flex-direction: column;
-  flex: none;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex: 1;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
   width: 100%;
   max-width: 100%;
-  padding-left: 4em;
-  padding-right: 4em;
-  display: block;
+  margin-top: 100px;
+  padding: 0 0 25px;
+  display: flex;
   position: static;
   top: 0%;
   left: 0%;
@@ -306,6 +315,14 @@ blockquote {
   padding-bottom: 4em;
   display: flex;
   overflow: hidden;
+}
+
+.section.home-hero-top.mob {
+  justify-content: space-around;
+  align-items: center;
+  height: auto;
+  padding-bottom: 15%;
+  display: block;
 }
 
 .section.home-hero-bottom {
@@ -1501,8 +1518,12 @@ blockquote {
 }
 
 .div-is-25 {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
   width: 25%;
   margin-left: 0;
+  display: flex;
 }
 
 .div-is-25.cs-div-right {
@@ -3048,6 +3069,8 @@ blockquote {
 
 .cs-wrapper-home {
   margin-top: 10em;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .photo-wrapper {
@@ -3590,7 +3613,7 @@ blockquote {
 }
 
 .hero-subtext {
-  margin-top: -12px;
+  margin-top: auto;
 }
 
 .hero-subtext.home {
@@ -3679,6 +3702,7 @@ blockquote {
 .container-marquee {
   width: 100%;
   height: auto;
+  margin-top: 100px;
   padding-top: 4vh;
   padding-bottom: 4vh;
   overflow: hidden;
@@ -3701,7 +3725,15 @@ blockquote {
 }
 
 .hero-intro-copy {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   flex-direction: row;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: flex-start;
+  align-self: flex-start;
+  align-items: center;
   display: flex;
 }
 
@@ -4989,6 +5021,21 @@ blockquote {
 
 .bold-text {
   color: var(--purple-brand);
+}
+
+.section-6 {
+  text-align: center;
+  align-self: stretch;
+  margin-top: 0;
+  margin-bottom: auto;
+  padding-bottom: 0;
+}
+
+.heading-26 {
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
 }
 
 @media screen and (min-width: 1440px) {
@@ -7271,8 +7318,24 @@ blockquote {
   place-self: stretch stretch;
 }
 
+#w-node-_4eabe20d-feab-2825-b63d-b58839533a4b-1fee5bd3, #w-node-_4eabe20d-feab-2825-b63d-b58839533a4c-1fee5bd3, #w-node-_208495ed-8008-1db8-fa97-cffeb5200504-1fee5bd3 {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+#w-node-c0f3df48-5a8b-7fa4-a208-d4223df2fa3c-1fee5bd3 {
+  justify-self: end;
+}
+
+#w-node-c0f3df48-5a8b-7fa4-a208-d4223df2fa3d-1fee5bd3, #w-node-_12270a30-4e63-f9ba-f232-c1739e89ffbe-1fee5bd3, #w-node-_12270a30-4e63-f9ba-f232-c1739e89ffbf-1fee5bd3, #w-node-_12270a30-4e63-f9ba-f232-c1739e89ffcb-1fee5bd3, #w-node-_12270a30-4e63-f9ba-f232-c1739e89ffcc-1fee5bd3 {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+#w-node-_12270a30-4e63-f9ba-f232-c1739e89ffcf-1fee5bd3 {
+  place-self: stretch stretch;
+}
+
 @media screen and (max-width: 991px) {
-  #w-node-_4eabe20d-feab-2825-b63d-b58839533a4c-e5efff87 {
+  #w-node-_4eabe20d-feab-2825-b63d-b58839533a4c-e5efff87, #w-node-_4eabe20d-feab-2825-b63d-b58839533a4c-1fee5bd3 {
     grid-area: span 1 / span 2 / span 1 / span 2;
   }
 }

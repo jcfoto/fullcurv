@@ -1,8 +1,10 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Fri Nov 14 2025 06:40:26 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="66b4633699a786d5e5efffc1" data-wf-site="66b4633699a786d5e5efff4c" lang="en">
+<html data-wf-page="67bbbdc16910573850618bc3" data-wf-site="66b4633699a786d5e5efff4c" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Fulcurv New</title>
+  <title>BSVforU</title>
+  <meta content="BSVforU" property="og:title">
+  <meta content="BSVforU" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -89,73 +91,123 @@ body:hover .cursor {opacity:1.0;}
       </div>
     </div>
   </div>
-  <div class="archive-hero">
+  <section id="top" class="section cs-hero-section">
+    <div class="w-embed w-script">
+      <div id="react-root"></div>
+      <script type="text/babel">
+  function SystemPromptGenerator() {
+    const [step, setStep] = React.useState(0);
+    const [responses, setResponses] = React.useState({});
+    const questions = [
+      { id: "role", label: "What is the AI agent's expertise?", placeholder: "e.g., Expert Resume Writer" },
+      { id: "tasks", label: "What tasks should the AI perform?", placeholder: "e.g., Optimize resumes" },
+      { id: "instructions", label: "What are the AI's core instructions?", placeholder: "e.g., Ensure clarity" },
+      { id: "chain_of_thought", label: "How should the AI reason?", placeholder: "e.g., Analyze -> Enhance -> Verify" },
+      { id: "constraints", label: "What should the AI avoid?", placeholder: "e.g., Never include irrelevant info" },
+    ];
+    function handleNext() {
+      if (step < questions.length - 1) setStep(step + 1);
+    }
+    function handleBack() {
+      if (step > 0) setStep(step - 1);
+    }
+    function handleChange(e) {
+      setResponses({ ...responses, [questions[step].id]: e.target.value });
+    }
+    function generatePrompt() {
+      return `YOU ARE A ${responses.role || "[Expert Role]"}. YOUR TASK IS TO ${responses.tasks || "[Perform Specific Tasks]"}.\n\n
+      ### INSTRUCTIONS ###\n${responses.instructions || "[Detailed Instructions]"}\n\n
+      ### CHAIN OF THOUGHT ###\n${responses.chain_of_thought || "[Reasoning Steps]"}\n\n
+      ### WHAT NOT TO DO ###\n${responses.constraints || "[Restrictions]"}`;
+    }
+    return (
+      <div style={{ maxWidth: "500px", margin: "0 auto", padding: "20px", borderRadius: "10px", boxShadow: "0 0 10px rgba(0,0,0,0.1)" }}>
+        {step < questions.length ? (
+          <div>
+            <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>{questions[step].label}</label>
+            <textarea style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
+              placeholder={questions[step].placeholder}
+              value={responses[questions[step].id] || ""}
+              onChange={handleChange} />
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "10px" }}>
+              {step > 0 && <button onClick={handleBack}>Back</button>}
+              <button onClick={handleNext}>{step < questions.length - 1 ? "Next" : "Generate"}</button>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <h2>Generated System Prompt</h2>
+            <textarea style={{ width: "100%", height: "150px", padding: "10px", borderRadius: "5px", border: "1px solid #ccc" }} readOnly value={generatePrompt()} />
+            <button onClick={() => navigator.clipboard.writeText(generatePrompt())} style={{ marginTop: "10px" }}>Copy to Clipboard</button>
+          </div>
+        )}
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("react-root")).render(React.createElement(SystemPromptGenerator));
+</script>
+    </div>
     <div class="container w-container">
       <div class="project-header-wrapper">
         <div class="div-is-25">
-          <h3 class="project-title w-dyn-bind-empty"></h3>
+          <h3 class="project-title">BSVforU</h3>
           <div class="archive-info-wrapper"></div>
         </div>
         <div class="archive-description-wrapper">
-          <h4 class="w-dyn-bind-empty"></h4>
+          <h4>
+            <a href="https://bsvwithu.com/"> Get Latest in Women&#x27;s Health and Fertility, </a>Clinical Guidelines.<br><strong><em>You</em></strong><em> can access guideline articles and recommendations from leading national and international societies —to optimise patient care.</em>
+          </h4>
         </div>
       </div>
       <div class="divider"></div>
       <div class="w-layout-grid grid-4-column">
         <div>
           <h5 class="archive-info-h6">Year</h5>
-          <p class="archive-p w-dyn-bind-empty"></p>
+          <p class="archive-p">2020</p>
         </div>
         <div>
-          <h5 class="archive-info-h6">Agency</h5>
-          <p class="archive-p w-dyn-bind-empty"></p>
+          <h5 class="archive-info-h6">Client</h5>
+          <p class="archive-p">
+            <a href="https://bharatserums.com/" target="_blank">Bharat Serums and Vaccines Limited</a>
+          </p>
         </div>
         <div>
           <h5 class="archive-info-h6">Project Type</h5>
-          <p class="archive-p w-dyn-bind-empty"></p>
+          <p class="archive-p">Product Design, UX/UI Design<br></p>
         </div>
         <div>
           <h5 class="archive-info-h6">Role</h5>
-          <p class="archive-p w-dyn-bind-empty"></p>
+          <p class="archive-p">Lead UX/UI Designer</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <div class="section is-white">
-    <div class="container w-container">
-      <div class="archive-video-wrapper">
-        <div class="archive-video website w-dyn-bind-empty w-video w-embed"></div><img src="" loading="lazy" alt="" class="archive-bkgrd-image w-dyn-bind-empty">
-      </div>
-      <div class="archive-image-wrapper"><img src="" loading="lazy" alt="" class="w-dyn-bind-empty"></div>
-      <div class="archive-image-wrapper"><img src="" loading="lazy" alt="" class="w-dyn-bind-empty"></div>
-      <div class="archive-image-wrapper"><img src="" loading="lazy" alt="" class="w-dyn-bind-empty"></div>
-      <div class="archive-image-wrapper"></div>
-    </div>
-    <div class="container more-archive w-container">
-      <div class="archive-heading-wrapper">
-        <h2 class="h2">View More</h2>
-      </div>
-      <div class="archive-collection-wrapper w-dyn-list">
-        <div role="list" class="w-dyn-items">
-          <div role="listitem" class="w-dyn-item">
+    <div class="container cs-hero-image w-container"></div>
+  </div>
+  <div class="section">
+    <div data-w-id="1e237d67-c406-9bb9-5117-45e0337e3594" class="container cs-more w-container">
+      <h2 data-w-id="cf7ae9ab-dce5-87c8-02f7-f432850545c3" class="more-cs-header">More Case Studies</h2>
+      <div data-w-id="4660f209-5263-f985-0e79-f8fd0f25c2b4" class="w-layout-grid more-case-studies">
+        <div class="grid-content">
+          <a href="#" class="link-to-cs w-inline-block">
+            <div class="cs-image-wrapper"><img src="images/iPad-11-pro-mockup-Vertical-Copy.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 1439px) 300px, 21vw" srcset="images/iPad-11-pro-mockup-Vertical-Copy-p-500.jpg 500w, images/iPad-11-pro-mockup-Vertical-Copy-p-800.jpg 800w, images/iPad-11-pro-mockup-Vertical-Copy-p-1080.jpg 1080w, images/iPad-11-pro-mockup-Vertical-Copy-p-1600.jpg 1600w, images/iPad-11-pro-mockup-Vertical-Copy-p-2000.jpg 2000w, images/iPad-11-pro-mockup-Vertical-Copy-p-2600.jpg 2600w, images/iPad-11-pro-mockup-Vertical-Copy-p-3200.jpg 3200w" alt="" class="cs-image"></div>
+            <div class="cs-title-block">
+              <h3>Landmark Group</h3><img src="images/arrow-right-black.svg" loading="lazy" alt="" class="arrow-right-black">
+            </div>
             <div class="divider"></div>
-            <a data-w-id="ab8136b8-2daa-87d9-1c78-0337973b2dae" href="#" class="project-wrapper w-inline-block">
-              <div class="div-is-60 cs-info-wrapper">
-                <h6 class="all-caps">Archive</h6>
-                <h3 class="w-dyn-bind-empty"></h3>
-                <div class="description-wrapper work">
-                  <p class="paragraph small w-dyn-bind-empty"></p><img src="images/arrow-right-black.svg" loading="lazy" style="opacity:0.25" alt="" class="arrow-right-black">
-                </div>
-              </div>
-              <div class="div-is-30"><img src="" loading="lazy" alt="" class="archive-work-img w-dyn-bind-empty"></div>
-            </a>
-          </div>
+          </a>
         </div>
-        <div class="w-dyn-empty">
-          <div>No items found.</div>
+        <div class="grid-content">
+          <a href="#" class="link-to-cs w-inline-block">
+            <div class="cs-image-wrapper"><img src="images/maruti.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 1439px) 300px, 21vw" srcset="images/maruti-p-500.jpg 500w, images/maruti-p-800.jpg 800w, images/maruti-p-1080.jpg 1080w, images/maruti-p-1600.jpg 1600w, images/maruti-p-2000.jpg 2000w, images/maruti-p-2600.jpg 2600w, images/maruti-p-3200.jpg 3200w" alt="" class="cs-image"></div>
+            <div class="cs-title-block">
+              <h3>Maruti Subscribe</h3><img src="images/arrow-right-black.svg" loading="lazy" alt="" class="arrow-right-black">
+            </div>
+            <div class="divider"></div>
+          </a>
         </div>
       </div>
-      <div class="divider"></div>
     </div>
   </div>
   <section id="contact" data-w-id="6295be72-55aa-80b0-a91e-e4db472dbb08" class="section is-footer ft">
